@@ -19,7 +19,24 @@
 
 #include <stdio.h>
 
+#include <unistd.h>
+
+#include <SDL/SDL.h>
+#include <SDL/SDL_opengl.h>
+
+#include "gfx.h"
+
 int main( int argc, char * argv[] ) {
-   printf( "hello, world\n" );
+   create_window( 640 , 480 );
+   glTranslatef( 0.0, 0.0, -0.5 );
+   glBegin( GL_TRIANGLES );
+
+      glVertex2i( 320, 400 );
+      glVertex2i( 220, 300 );
+      glVertex2i( 420, 300 );
+
+   glEnd();
+   SDL_GL_SwapBuffers();
+   sleep( 5 );
    return 0;
 }

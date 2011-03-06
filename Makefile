@@ -20,7 +20,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Werror -O2 -g -Iinclude
 LINK    = gcc
-LDFLAGS = 
+LDFLAGS = -lGL -lGLU -lSDL
 
 MODULES = main gfx-init
 OBJ     = $(patsubst %, obj/%.o, $(MODULES))

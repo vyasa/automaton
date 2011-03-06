@@ -23,7 +23,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
-SDL_Surface * screen;
+static SDL_Surface * screen;
 
 /* Set up an OpenGL capable window with SDL and OpenGL. */
 void create_window( GLsizei w, GLsizei h ) {
@@ -43,11 +43,10 @@ void create_window( GLsizei w, GLsizei h ) {
    glClearColor( 0.0f, 0.0f, 0.0f, 0.0f );
    glHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
 
-   GLfloat r = ( GLfloat ) w / ( GLfloat ) ( h ? h : 1 );
    glViewport( 0, 0, w, h );
    glMatrixMode( GL_PROJECTION );
    glLoadIdentity();
-   gluPerspective( 45.0f, r, 0.1f, 100.0f );
+   glOrtho( 0, w, h, 0, 0.001, 2 );
    glMatrixMode( GL_MODELVIEW );
    glLoadIdentity();
 }
