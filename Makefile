@@ -5,7 +5,7 @@
 #                                                                           #
 # Automaton is free software: you can redistribute it and/or modify it      #
 # under  the terms of the GNU General Public License as published by the    #
-# Free Software Foundation, either version 3 of the License, or (at you     #
+# Free Software Foundation, either version 3 of the License, or (at your    #
 # option) any later version.                                                #
 #                                                                           #
 # Automata is distributed in the hope that it will be useful, but WITHOUT   #
@@ -20,7 +20,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Werror -O2 -g -Iinclude
 LINK    = gcc
-LDFLAGS = 
+LDFLAGS = -lGL -lGLU -lSDL
 
 MODULES = main gfx-init
 OBJ     = $(patsubst %, obj/%.o, $(MODULES))

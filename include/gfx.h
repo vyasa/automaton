@@ -1,3 +1,5 @@
+/* gfx.h */
+
 /*****************************************************************************
  * This file is part of the automaton project.                               *
  * Copyright (C) 2011 Samuel C. Payson, Timothy Kopp,                        *
@@ -17,26 +19,17 @@
  * with automaton. If not, see <http://www.gnu.org/licenses/>.               *
  *****************************************************************************/
 
-#include <stdio.h>
+#ifndef _AUTOMATON_GFX_H_
+#define _AUTOMATON_GFX_H_
 
-#include <unistd.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 
-#include "gfx.h"
+typedef GLint coord[2];
 
-int main( int argc, char * argv[] ) {
-   create_window( 640 , 480 );
-   glTranslatef( 0.0, 0.0, -0.5 );
-   glBegin( GL_TRIANGLES );
+void create_window( GLsizei w, GLsizei h );
 
-      glVertex2i( 320, 400 );
-      glVertex2i( 220, 300 );
-      glVertex2i( 420, 300 );
-
-   glEnd();
-   SDL_GL_SwapBuffers();
-   sleep( 5 );
-   return 0;
-}
+#endif /* gfx.h */
